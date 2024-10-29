@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tJQzVVTAnIMnxvOyk6wbO4DdmACKbKbiUYEsvU3yEt6r9+5CFuA6obQEsGQpDIFopYgBIcn51IqqWG89COFcRQ==",
+  "dgSpecHash": "8Loe42IaxsI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Minh Khiet\\Desktop\\CDTN\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
+  "projectFilePath": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Minh Khiet\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Minh Khiet\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.30\\microsoft.aspnetcore.authentication.jwtbearer.6.0.30.nupkg.sha512",

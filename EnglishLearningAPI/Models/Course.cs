@@ -1,12 +1,16 @@
-﻿namespace EnglishLearningAPI.Models
-{
-    public class Course
-    {
-        public int course_id { get; set; }
-        public string course_name { get; set; }
-        public string description { get; set; }
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-        public ICollection<Topic> topic { get; set; }
-        public ICollection<User_Progress> user_progress { get; set; }
-    }
+public class Course
+{
+    [Key]
+    public int course_id { get; set; }
+
+    [StringLength(255)]
+    public string course_name { get; set; }
+
+    public string description { get; set; }
+
+    // Navigation properties
+    public ICollection<Topic> Topics { get; set; }
 }

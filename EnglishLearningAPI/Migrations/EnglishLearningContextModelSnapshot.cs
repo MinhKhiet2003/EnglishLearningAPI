@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EnglishLearningAPI.Migrations
 {
-    [DbContext(typeof(EnglishLearningContext))]
+    [DbContext(typeof(EnglishLearningDbContext))]
     partial class EnglishLearningContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -22,7 +22,7 @@ namespace EnglishLearningAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.Course", b =>
+            modelBuilder.Entity("Course", b =>
                 {
                     b.Property<int>("course_id")
                         .ValueGeneratedOnAdd()
@@ -32,7 +32,8 @@ namespace EnglishLearningAPI.Migrations
 
                     b.Property<string>("course_name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -43,7 +44,7 @@ namespace EnglishLearningAPI.Migrations
                     b.ToTable("Courses");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.Payment", b =>
+            modelBuilder.Entity("Payment", b =>
                 {
                     b.Property<int>("payment_id")
                         .ValueGeneratedOnAdd()
@@ -54,21 +55,25 @@ namespace EnglishLearningAPI.Migrations
                     b.Property<decimal>("amount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime?>("payment_date")
+                    b.Property<DateTime>("payment_date")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("payment_method")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<int>("user_id")
                         .HasColumnType("int");
 
                     b.HasKey("payment_id");
 
+                    b.HasIndex("user_id");
+
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.Subscription", b =>
+            modelBuilder.Entity("Subscription", b =>
                 {
                     b.Property<int>("subscription_id")
                         .ValueGeneratedOnAdd()
@@ -76,13 +81,15 @@ namespace EnglishLearningAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("subscription_id"), 1L, 1);
 
-                    b.Property<DateTime?>("end_date")
+                    b.Property<DateTime>("end_date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("plan")
-                        .HasColumnType("int");
+                    b.Property<string>("plan")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<DateTime?>("start_date")
+                    b.Property<DateTime>("start_date")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("user_id")
@@ -90,10 +97,12 @@ namespace EnglishLearningAPI.Migrations
 
                     b.HasKey("subscription_id");
 
+                    b.HasIndex("user_id");
+
                     b.ToTable("Subscriptions");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.Topic", b =>
+            modelBuilder.Entity("Topic", b =>
                 {
                     b.Property<int>("topic_id")
                         .ValueGeneratedOnAdd()
@@ -105,20 +114,25 @@ namespace EnglishLearningAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("order")
                         .HasColumnType("int");
 
                     b.Property<string>("topic_name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("topic_id");
+
+                    b.HasIndex("course_id");
 
                     b.ToTable("Topics");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.User", b =>
+            modelBuilder.Entity("User", b =>
                 {
                     b.Property<int>("user_id")
                         .ValueGeneratedOnAdd()
@@ -128,21 +142,34 @@ namespace EnglishLearningAPI.Migrations
 
                     b.Property<string>("email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.Property<string>("password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("refresh_token")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("nvarchar(512)");
+
+                    b.Property<DateTime?>("refresh_token_expiry")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("role")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("subscription_end_date")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("subscription_plan")
-                        .HasColumnType("int");
+                    b.Property<string>("subscription_plan")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("subscription_start_date")
                         .HasColumnType("datetime2");
@@ -152,7 +179,7 @@ namespace EnglishLearningAPI.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.User_Progress", b =>
+            modelBuilder.Entity("UserProgress", b =>
                 {
                     b.Property<int>("progress_id")
                         .ValueGeneratedOnAdd()
@@ -160,10 +187,10 @@ namespace EnglishLearningAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("progress_id"), 1L, 1);
 
-                    b.Property<DateTime?>("last_reviewed")
+                    b.Property<DateTime>("last_reviewed")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("next_review")
+                    b.Property<DateTime>("next_review")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("review_interval")
@@ -177,10 +204,14 @@ namespace EnglishLearningAPI.Migrations
 
                     b.HasKey("progress_id");
 
-                    b.ToTable("User_Progresses");
+                    b.HasIndex("user_id");
+
+                    b.HasIndex("vocab_id");
+
+                    b.ToTable("UserProgresses");
                 });
 
-            modelBuilder.Entity("EnglishLearningAPI.Data.Vocabulary", b =>
+            modelBuilder.Entity("Vocabulary", b =>
                 {
                     b.Property<int>("vocab_id")
                         .ValueGeneratedOnAdd()
@@ -205,11 +236,101 @@ namespace EnglishLearningAPI.Migrations
 
                     b.Property<string>("word")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
 
                     b.HasKey("vocab_id");
 
-                    b.ToTable("Vocabularys");
+                    b.HasIndex("topic_id");
+
+                    b.ToTable("Vocabularies");
+                });
+
+            modelBuilder.Entity("Payment", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("Payments")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Subscription", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("Subscriptions")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Topic", b =>
+                {
+                    b.HasOne("Course", "Course")
+                        .WithMany("Topics")
+                        .HasForeignKey("course_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("UserProgress", b =>
+                {
+                    b.HasOne("User", "User")
+                        .WithMany("User_Progresses")
+                        .HasForeignKey("user_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Vocabulary", "Vocabulary")
+                        .WithMany("User_Progresses")
+                        .HasForeignKey("vocab_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("Vocabulary");
+                });
+
+            modelBuilder.Entity("Vocabulary", b =>
+                {
+                    b.HasOne("Topic", "Topic")
+                        .WithMany("Vocabularies")
+                        .HasForeignKey("topic_id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Topic");
+                });
+
+            modelBuilder.Entity("Course", b =>
+                {
+                    b.Navigation("Topics");
+                });
+
+            modelBuilder.Entity("Topic", b =>
+                {
+                    b.Navigation("Vocabularies");
+                });
+
+            modelBuilder.Entity("User", b =>
+                {
+                    b.Navigation("Payments");
+
+                    b.Navigation("Subscriptions");
+
+                    b.Navigation("User_Progresses");
+                });
+
+            modelBuilder.Entity("Vocabulary", b =>
+                {
+                    b.Navigation("User_Progresses");
                 });
 #pragma warning restore 612, 618
         }

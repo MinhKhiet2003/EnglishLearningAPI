@@ -1,13 +1,22 @@
-﻿namespace EnglishLearningAPI.Models
-{
-    public class Subscription
-    {
-        public int subscription_id { get; set; }
-        public int user_id { get; set; }
-        public string plan { get; set; }
-        public DateTime start_date { get; set; }
-        public DateTime end_date { get; set; }
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public User user { get; set; }
-    }
+public class Subscription
+{
+    [Key]
+    public int subscription_id { get; set; }
+
+    [ForeignKey("User")]
+    public int user_id { get; set; }
+
+    [StringLength(50)]
+    public string plan { get; set; }
+
+    public DateTime start_date { get; set; }
+
+    public DateTime end_date { get; set; }
+
+    // Navigation property
+    public User User { get; set; }
 }

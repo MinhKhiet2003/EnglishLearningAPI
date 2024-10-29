@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Project\\EnglishLearningAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|d:\\project\\englishlearningapi\\englishlearningapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|solutionrelative:englishlearningapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|d:\\project\\englishlearningapi\\englishlearningapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|solutionrelative:englishlearningapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|d:\\project\\englishlearningapi\\englishlearningapi\\controllers\\vocabulariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|solutionrelative:englishlearningapi\\controllers\\vocabulariescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|d:\\project\\englishlearningapi\\englishlearningapi\\controllers\\subscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A263F5AC-10FF-404E-BA51-0E342BE3B3D6}|EnglishLearningAPI\\EnglishLearningAPI.csproj|solutionrelative:englishlearningapi\\controllers\\subscriptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "EnglishLearningAPI\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\UserController.cs",
+              "RelativeToolTip": "EnglishLearningAPI\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T03:46:31.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\PaymentsController.cs",
+              "RelativeDocumentMoniker": "EnglishLearningAPI\\Controllers\\PaymentsController.cs",
+              "ToolTip": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\PaymentsController.cs",
+              "RelativeToolTip": "EnglishLearningAPI\\Controllers\\PaymentsController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T03:44:25.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "VocabulariesController.cs",
+              "DocumentMoniker": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\VocabulariesController.cs",
+              "RelativeDocumentMoniker": "EnglishLearningAPI\\Controllers\\VocabulariesController.cs",
+              "ToolTip": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\VocabulariesController.cs",
+              "RelativeToolTip": "EnglishLearningAPI\\Controllers\\VocabulariesController.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAiwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T03:43:40.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SubscriptionsController.cs",
+              "DocumentMoniker": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\SubscriptionsController.cs",
+              "RelativeDocumentMoniker": "EnglishLearningAPI\\Controllers\\SubscriptionsController.cs",
+              "ToolTip": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\Controllers\\SubscriptionsController.cs",
+              "RelativeToolTip": "EnglishLearningAPI\\Controllers\\SubscriptionsController.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAcwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T03:43:13.522Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

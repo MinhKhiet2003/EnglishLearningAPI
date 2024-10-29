@@ -1,13 +1,22 @@
-﻿namespace EnglishLearningAPI.Models
-{
-    public class Payment
-    {
-        public int payment_id { get; set; }
-        public int user_id { get; set; }
-        public decimal amount { get; set; }
-        public DateTime payment_date { get; set; }
-        public string payment_method { get; set; }
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-        public User user { get; set; }
-    }
+public class Payment
+{
+    [Key]
+    public int payment_id { get; set; }
+
+    [ForeignKey("User")]
+    public int user_id { get; set; }
+
+    public decimal amount { get; set; }
+
+    public DateTime payment_date { get; set; }
+
+    [StringLength(255)]
+    public string payment_method { get; set; }
+
+    // Navigation property
+    public User User { get; set; }
 }

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EnglishLearningAPI.Migrations
 {
-    [DbContext(typeof(EnglishLearningContext))]
+    [DbContext(typeof(EnglishLearningDbContext))]
     [Migration("20240926095846_InitialCreate")]
     partial class InitialCreate
     {

@@ -3011,19 +3011,21 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Minh Khiet\\Desktop\\CDTN\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
+      "projectUniqueName": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
       "projectName": "EnglishLearningAPI",
-      "projectPath": "C:\\Users\\Minh Khiet\\Desktop\\CDTN\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
+      "projectPath": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\EnglishLearningAPI.csproj",
       "packagesPath": "C:\\Users\\Minh Khiet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Minh Khiet\\Desktop\\CDTN\\EnglishLearningAPI\\EnglishLearningAPI\\obj\\",
+      "outputPath": "D:\\Project\\EnglishLearningAPI\\EnglishLearningAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Minh Khiet\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Minh Khiet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -3037,6 +3039,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -3085,7 +3092,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
